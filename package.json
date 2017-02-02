@@ -1,0 +1,24 @@
+{
+  "name": "emotion-project",
+  "version": "1.0.0",
+  "description": "A personal project aimed at producing a heat-map based on emotion",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wolenskyatwork/emotion-project.git"
+  },
+  "author": "Elizabeth Wolensky",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wolenskyatwork/emotion-project/issues"
+  },
+  "homepage": "https://github.com/wolenskyatwork/emotion-project#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-open": "^2.0.0"
+  }
+}
