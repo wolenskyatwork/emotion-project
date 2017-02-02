@@ -17,8 +17,11 @@
   },
   "homepage": "https://github.com/wolenskyatwork/emotion-project#readme",
   "dependencies": {
+    "browserify": "^14.0.0",
     "gulp": "^3.9.1",
     "gulp-connect": "^5.0.0",
-    "gulp-open": "^2.0.0"
+    "gulp-open": "^2.0.0",
+    "reactify": "^1.1.1",
+    "vinyl-source-stream": "^1.1.0"
   }
 }
