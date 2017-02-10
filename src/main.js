@@ -1,5 +1,8 @@
-$ = jQuery = require('jquery');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Home from './components/homePage';
 
-var App = console.log('Hello from Browserify');
-
-module.exports = App;
+ReactDOM.render(
+  <Home />,
+  document.getElementById('root')
+);

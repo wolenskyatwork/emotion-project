@@ -4,7 +4,7 @@ var gulp = require('gulp');
 var connect = require('gulp-connect'); //local dev server
 var open = require('gulp-open'); // open url in web browser
 var browserify = require('browserify');
-var reactify = require('reactify'); //jsx to js
+var babelify = require('babelify'); //jsx to js
 var source = require('vinyl-source-stream'); //conventional text streams
 var concat = require('gulp-concat');
 var lint = require('gulp-eslint');
@@ -16,8 +16,7 @@ var  config = {
     html: './src/*.html',
     js: './src/**/*.js',
     css: [
-      'node_modules/bootstrap/dist/css/bootstrap.min.css',
-      'node_modules/bootstrap/dist/css/bootstrap-theme.min.css'
+      './styles/main.css'
     ],
     dist: './dist',
     mainJs: './src/main.js'
@@ -30,7 +29,7 @@ gulp.task('connect', function() {
     root: ['dist'],
     port: config.port,
     base: config.devBaseUrl,
-    livereload: true  
+    livereload: true
   });
 });
 
@@ -47,7 +46,9 @@ gulp.task('html', function() {
 
 gulp.task('js', function() {
   browserify(config.paths.mainJs)
-    .transform(reactify)
+    .transform(babelify.configure({
+      presets: ["es2015", "react"]
+    }))
     .bundle()
     .on('error', console.error.bind(console))
     .pipe(source('bundle.js'))
