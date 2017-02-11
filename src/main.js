@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Home from './components/homePage';
+import Map from './components/homePage';
 
 ReactDOM.render(
-  <Home />,
+  <Map />,
   document.getElementById('root')
 );

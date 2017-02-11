@@ -16,7 +16,8 @@ var  config = {
     html: './src/*.html',
     js: './src/**/*.js',
     css: [
-      './styles/main.css'
+      './styles/main.css',
+      'node_modules/mapbox-gl/dist/mapbox-gl.css',
     ],
     dist: './dist',
     mainJs: './src/main.js'
@@ -59,7 +60,8 @@ gulp.task('js', function() {
 gulp.task('css', function() {
   gulp.src(config.paths.css)
     .pipe(concat('bundle.css'))
-    .pipe(gulp.dest(config.paths.dist + '/css'));
+    .pipe(gulp.dest(config.paths.dist + '/css'))
+    .pipe(connect.reload());
 });
 
 gulp.task('lint', function() {
@@ -70,6 +72,7 @@ gulp.task('lint', function() {
 
 gulp.task('watch', function() {
   gulp.watch(config.paths.html, ['html']);
+  gulp.watch(config.paths.css[0], ['css']);
   gulp.watch(config.paths.js, ['js', 'lint']);
 });
 
