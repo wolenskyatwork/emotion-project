@@ -1,5 +1,6 @@
 import React from 'react';
 import mapboxgl from 'mapbox-gl';
+import { mapboxToken } from '../../.env';
 
 class Map extends React.Component {
   componentDidMount() {
@@ -10,7 +11,7 @@ class Map extends React.Component {
   }
 
   render() {
-    mapboxgl.accessToken = 'pk.eyJ1Ijoic2FpbG9yZmxhcmVzIiwiYSI6ImNpcWs4aDltNjAxenVnaGo5aWlhZ2VtNDcifQ.C9h7x7AJ5eMzbI3GuQV0xQ';
+    mapboxgl.accessToken = mapboxToken;
 
     return (
       <div className="fullscreen">

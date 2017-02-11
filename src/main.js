@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Map from './components/homePage';
+import Map from './components/map';
 
 ReactDOM.render(
   <Map />,
