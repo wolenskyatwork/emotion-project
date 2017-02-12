@@ -5,8 +5,10 @@ import { mapboxToken } from '../../.env';
 class Map extends React.Component {
   componentDidMount() {
     var map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v9'
+      container: 'map',
+      style: 'mapbox://styles/mapbox/streets-v9',
+      center: [-73.9724680, 40.6776330],
+      zoom: 11,
     });
   }
 
