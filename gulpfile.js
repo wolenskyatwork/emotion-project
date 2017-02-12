@@ -24,7 +24,6 @@ var  config = {
   }
 }
 
-// start the local dev server
 gulp.task('connect', function() {
   connect.server({
     root: ['dist'],
@@ -48,7 +47,8 @@ gulp.task('html', function() {
 gulp.task('js', function() {
   browserify(config.paths.mainJs)
     .transform(babelify.configure({
-      presets: ["es2015", "react"]
+      presets: ["es2015", "react", "stage-2"],
+      plugins: ["transform-regenerator"]
     }))
     .bundle()
     .on('error', console.error.bind(console))

@@ -1,20 +1,16 @@
 import React from 'react';
-import mapboxgl from 'mapbox-gl';
-import { mapboxToken } from '../../.env';
+import { connect } from 'react-redux';
+import { mountMapAction } from '../actions/mapActions';
 
 class Map extends React.Component {
   componentDidMount() {
-    var map = new mapboxgl.Map({
-      container: 'map',
-      style: 'mapbox://styles/mapbox/streets-v9',
-      center: [-73.9724680, 40.6776330],
-      zoom: 11,
-    });
+    console.log('mountMapAction');
+    console.log(mountMapAction);
+    console.log(this.props);
+    this.props.mountMap();
   }
 
   render() {
-    mapboxgl.accessToken = mapboxToken;
-
     return (
       <div className="fullscreen">
         <div id="map" className="mapbox"></div>
@@ -23,4 +19,10 @@ class Map extends React.Component {
   }
 }
 
-export default Map;
+function mapDispatchToProps(dispatch) {
+  return({
+    mountMap: () => { dispatch(mountMapAction); }
+  });
+}
+
+export default connect(null, mapDispatchToProps)(Map);
