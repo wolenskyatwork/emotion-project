@@ -11,6 +11,7 @@ class Home extends React.Component {
         <Button text="Happy" />
         <Button text="Sad" />
         <Button text="Scared" />
+        <Button text="Annoyed" />
       </div>
     );
   }
