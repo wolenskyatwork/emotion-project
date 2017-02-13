@@ -4,9 +4,6 @@ import { mountMapAction } from '../actions/mapActions';
 
 class Map extends React.Component {
   componentDidMount() {
-    console.log('mountMapAction');
-    console.log(mountMapAction);
-    console.log(this.props);
     this.props.mountMap();
   }
 

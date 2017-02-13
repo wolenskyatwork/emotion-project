@@ -56648,9 +56648,6 @@ var Map = function (_React$Component) {
   _createClass(Map, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      console.log('mountMapAction');
-      console.log(_mapActions.mountMapAction);
-      console.log(this.props);
       this.props.mountMap();
     }
   }, {
@@ -56964,7 +56961,7 @@ function mountMap() {
           _context2.prev = 8;
           _context2.t0 = _context2['catch'](0);
           _context2.next = 12;
-          return (0, _effects.put)({ type: _actionTypes.MAP.ERROR, error: _context2.t0 });
+          return (0, _effects.put)({ type: _actionTypes.MAP.ERROR, value: _context2.t0 });
 
         case 12:
         case 'end':

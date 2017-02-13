@@ -17,7 +17,7 @@ export function* mountMap() {
     yield call(mountMapEffect);
     yield put({ type: MAP.MOUNTED });
   } catch (error) {
-    yield put({ type: MAP.ERROR, error });
+    yield put({ type: MAP.ERROR, value: error });
   }
 }
 

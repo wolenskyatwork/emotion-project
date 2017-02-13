@@ -8,6 +8,9 @@ var babelify = require('babelify'); //jsx to js
 var source = require('vinyl-source-stream'); //conventional text streams
 var concat = require('gulp-concat');
 var lint = require('gulp-eslint');
+var mocha = require('gulp-mocha');
+var babel = require('babel-core/register');
+var plug = require('gulp-load-plugins')({ lazy: true });
 
 var  config = {
   port: '9005',
@@ -20,7 +23,8 @@ var  config = {
       'node_modules/mapbox-gl/dist/mapbox-gl.css',
     ],
     dist: './dist',
-    mainJs: './src/main.js'
+    mainJs: './src/main.js',
+    test: './src/**/*.test.js'
   }
 }
 
@@ -68,6 +72,15 @@ gulp.task('lint', function() {
   return gulp.src(config.paths.js)
     .pipe(lint({ configFile: '.eslintrc.json' }))
     .pipe(lint.format());
+});
+
+gulp.task('mocha', function() {
+  return gulp.src(config.paths.test, { read: false })
+    .pipe(plug.mocha({
+      compilers: {
+        js: babel
+      }
+    }));
 });
 
 gulp.task('watch', function() {
