@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/wolenskyatwork/emotion-project#readme",
   "dependencies": {
+    "axios": "^0.15.3",
     "babel-core": "^6.22.1",
     "babel-plugin-transform-object-rest-spread": "^6.22.0",
     "babel-plugin-transform-regenerator": "^6.22.0",

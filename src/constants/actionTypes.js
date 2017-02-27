@@ -3,3 +3,9 @@ export const MAP = {
   MOUNTED: 'MOUNTED',
   ERROR: 'ERROR',
 };
+
+export const LOCATION = {
+  GET: 'GET',
+  SUCCESS: 'SUCCESS',
+  ERROR: 'ERROR',
+};
